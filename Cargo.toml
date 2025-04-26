@@ -1,0 +1,20 @@
+[package]
+name = "bevy_game_of_life"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+bevy = "=0.15.3"
+bevy_editor_pls = { git = "https://github.com/ltsoveranakin/bevy_editor_pls.git" }
+
+[profile.dev]
+opt-level = 1
+
+[profile.dev.package."*"]
+opt-level = 3
+
+[toolchain]
+channel = "nightly"
+
+[target.x86_64-pc-windows-msvc]
+linker = "rust-lld.exe"
